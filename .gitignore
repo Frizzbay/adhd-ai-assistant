@@ -1,0 +1,45 @@
+# Create .gitignore file
+cat > .gitignore << 'EOF'
+# Python virtual environment
+venv/
+env/
+ENV/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Environment variables
+.env
+.flaskenv
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Local development settings
+instance/
+.webassets-cache
+
+# Database files
+*.db
+*.sqlite
+
+# Logs
+*.log
+logs/
+
+# OS specific files
+.DS_Store
+Thumbs.db
+EOF
