@@ -1,7 +1,5 @@
 # ADHD AI Assistant
 
-# ADHD AI Assistant
-
 A Python-based AI assistant application designed to support individuals with ADHD.
 
 ## Project Overview
