@@ -23,7 +23,7 @@ class ClaudeAPI:
         self.client = anthropic.Anthropic(api_key=self.api_key)
         self.model = os.getenv("CLAUDE_MODEL", "claude-3-haiku-20240307")
 
-    def send_message(self, message: str, system_prompt: str, conversation_history: Optional[list[dict[str, Any]]] - None) -> Dict[str, Any]:
+    def send_message(self, message: str, system_prompt: str, conversation_history: Optional[list[dict[str, Any]]] = None) -> Dict[str, Any]:
         """
         Send a message to Claude and get a response.
 
@@ -43,7 +43,7 @@ class ClaudeAPI:
 
         try:
             # Call the Claude API
-            response = self.client.message.create(model=self.model, system = system_prompt, messages=messages, max_tokens=1024)
+            response = self.client.messages.create(model=self.model, system = system_prompt, messages=messages, max_tokens=1024)
             # Extract the response text
 
             result = {
