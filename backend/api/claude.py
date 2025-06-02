@@ -43,7 +43,7 @@ class ClaudeAPI:
 
         try:
             # Call the Claude API
-            response = self.client.messages.create(model=self.model, system = system_prompt, messages=messages, max_tokens=1024)
+            response = self.client.messages.create(model=self.model, system=system_prompt, messages=messages, max_tokens=1024)
             # Extract the response text
 
             result = {
