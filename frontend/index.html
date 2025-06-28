@@ -6,8 +6,36 @@
 </head>
 <body>
     <h1>ADHD AI Assistant</h1>
-    <div id="app">
+
+    <!-- Mode selector for tailoring Claude responses -->
+
+    <div id="mode-selector">
+        <label>Mode: </label>
+        <button class="mode-btn active" data-mode="minimal">Testing</button>
+        <button class="mode-btn" data-mode="direct">Direct</button>
+        <button class="mode-btn" data-mode="supportive">Supportive</button>
+        <button class="mode-btn" data-mode="structured">Structured</button>
     </div>
+
+    <!-- Current Node Indicator -->
+    <div>
+        <span id="current-mode-text">Current Mode: Testing</span>
+    </div>
+
+    <!-- This will hold our chat messages -->
+
+    <div id="chat-messages">
+        <p>Welcome! Type a message below.</p>
+    </div>
+
+    <!-- This is where our users type -->
+    <div id="input-area">
+        <input type="text" id="message-input" placeholder="Type your message...">
+        <button id="send-button">Send</button>
+
+    </div>
+
+
     <script src="scripts/main.js"></script>
 </body>
 </html>
