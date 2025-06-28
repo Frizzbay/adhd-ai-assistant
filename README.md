@@ -12,6 +12,14 @@ This project connects a Flask backend with the Claude AI API to create a support
 - **AI Integration**: Anthropic's Claude API
 - **Frontend**: HTML, CSS, JavaScript
 
+## Features
+
+### Multi-mode Conversation System
+- **Testing Mode**: Minimal prompts for development/testing
+- **Direct Mode**: Reality-focused, action-oriented responses  
+- **Supportive Mode**: Gentle, encouraging guidance
+- **Structured Mode**: Step-by-step, organized assistance
+
 ## Installation
 
 ### Prerequisites
@@ -52,6 +60,18 @@ This project connects a Flask backend with the Claude AI API to create a support
    # Edit .env file and add your Anthropic API key
    ```
 
+## Usage
+
+1. **Start the backend server**
+   ```bash
+   cd backend
+   python app.py
+   ```
+
+2. **Open the frontend**
+   - Open `frontend/index.html` in your web browser
+   - Select conversation mode and start chatting
+
 ## Project Structure
 
 ```
@@ -81,7 +101,11 @@ This project is in active development. Current status:
 - ✅ Claude API connection implemented 
 - ✅ Flask backend with API endpoints created
 - ✅ Multi-mode prompt system designed
+- ✅ Basic frontend chat interface implemented
+- ✅ Frontend-backend connection established
 
-In progress:
-- Frontend user interface development
+Needs refinement:
+- UI styling and user experience
 - Conversation history implementation
+- Error handling improvements
+- Additional ADHD-specific features
