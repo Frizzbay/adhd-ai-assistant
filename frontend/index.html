@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>ADHD AI Assistant</title>
     <link rel="stylesheet" href="styles/main.css">
 </head>
@@ -11,10 +12,15 @@
         <!-- Mode selector for tailoring Claude responses -->
         <div id="mode-selector">
             <label>Mode: </label>
-            <button class="mode-btn active" data-mode="minimal">Testing</button>
+            <button class="mode-btn active" data-mode="minimal">Minimal</button>
             <button class="mode-btn" data-mode="direct">Direct</button>
             <button class="mode-btn" data-mode="supportive">Supportive</button>
             <button class="mode-btn" data-mode="structured">Structured</button>
+        </div>
+
+        <!-- ADD THIS NEW SECTION -->
+        <div class="test-mode-section">
+            <button id="test-mode-btn">🧪 Test Mode: OFF</button>
         </div>
 
         <!-- Current Node Indicator -->
@@ -22,9 +28,7 @@
             <span id="current-mode-text">Current Mode: Testing</span>
         </div>
 
-        <!-- This will hold
-        our chat messages -->
-
+        <!-- This will hold our chat messages -->
         <div id="chat-messages">
             <p>Welcome! Type a message below.</p>
         </div>
@@ -33,7 +37,6 @@
         <div id="input-area">
             <input type="text" id="message-input" placeholder="Type your message...">
             <button id="send-button">Send</button>
-
         </div>
     </div>
 

@@ -31,13 +31,30 @@ def chat():
         # Get data from the POST request
         data = request.get_json()
 
-        # Extract user message and prompt mode
+        # Extract user message, prompt mode, and test mode
         user_message = data.get('message', '')
         prompt_mode = data.get('mode', 'minimal')  # Default to minimal for testing
+        test_mode = data.get('test_mode', False)
 
         # Validate input
         if not user_message.strip():
             return jsonify({"error": "Message cannot be empty"}), 400
+
+        if test_mode:
+            # Return mock response without calling Claude API
+            mock_responses = {
+                "minimal": "This is a mock minimal response.",
+                "direct": "Mock direct response - straight to the point.",
+                "supportive": "Mock supportive response - you're doing great!",
+                "structured": "Mock structured response:\n1. Step one\n2. Step two"
+            }
+            return jsonify({
+                "response": mock_responses.get(prompt_mode, "Mock response"),
+                "mode": prompt_mode,
+                "model": "mock-model",
+                "usage": {"input_tokens": 0, "output_tokens": 0},
+                "success": True
+            })
 
         # Get the appropriate system prompt for the selected mode
         system_prompt = get_system_prompt(prompt_mode)
