@@ -8,17 +8,23 @@ This project connects a Flask backend with the Claude AI API to create a support
 
 ## Technology Stack
 
-- **Backend**: Python with Flask
+- **Backend**: Python with Flask, Flask-CORS
 - **AI Integration**: Anthropic's Claude API
 - **Frontend**: HTML, CSS, JavaScript
+- **Development**: Test mode system for API cost management
 
 ## Features
 
 ### Multi-mode Conversation System
-- **Testing Mode**: Minimal prompts for development/testing
+- **Minimal Mode**: Basic testing prompt (saves API credits during development)
 - **Direct Mode**: Reality-focused, action-oriented responses  
 - **Supportive Mode**: Gentle, encouraging guidance
 - **Structured Mode**: Step-by-step, organized assistance
+
+### Development Features
+- **Test Mode**: Toggle between mock responses and live API calls
+- **Mode Selection**: Real-time switching between conversation modes
+- **Chat Interface**: Basic messaging interface
 
 ## Installation
 
@@ -30,13 +36,13 @@ This project connects a Flask backend with the Claude AI API to create a support
 ### Setup Instructions
 
 1. **Clone the repository**
-   ```
+   ```bash
    git clone https://github.com/YOUR-USERNAME/adhd-ai-assistant.git
    cd adhd-ai-assistant
    ```
 
 2. **Set up Python environment**
-   ```
+   ```bash
    cd backend
    python -m venv venv
    
@@ -48,16 +54,17 @@ This project connects a Flask backend with the Claude AI API to create a support
    ```
 
 3. **Install dependencies**
-   ```
+   ```bash
    pip install -r requirements.txt
    ```
 
 4. **Configure environment variables**
-   ```
+   ```bash
    # Copy the example environment file
    cp .env.example .env
    
    # Edit .env file and add your Anthropic API key
+   ANTHROPIC_API_KEY=your_actual_key_here
    ```
 
 ## Usage
@@ -71,13 +78,14 @@ This project connects a Flask backend with the Claude AI API to create a support
 2. **Open the frontend**
    - Open `frontend/index.html` in your web browser
    - Select conversation mode and start chatting
+   - Use test mode toggle to switch between mock and live responses
 
 ## Project Structure
 
 ```
 adhd-ai-assistant/
 ├── backend/
-│   ├── app.py                 # Main Flask application
+│   ├── app.py                 # Main Flask application with test mode support
 │   ├── api/
 │   │   ├── __init__.py
 │   │   └── claude.py          # Claude API implementation
@@ -87,11 +95,11 @@ adhd-ai-assistant/
 │   ├── requirements.txt       # Python dependencies
 │   └── .env.example           # Environment variables template
 └── frontend/
-    ├── index.html             # Main HTML interface
+    ├── index.html             # Main HTML interface with mode selector and test mode
     ├── styles/
     │   └── main.css           # Stylesheet
     └── scripts/
-        └── main.js            # Frontend JavaScript
+        └── main.js            # Frontend JavaScript with class-based architecture
 ```
 
 ## Development Status
@@ -101,11 +109,10 @@ This project is in active development. Current status:
 - ✅ Claude API connection implemented 
 - ✅ Flask backend with API endpoints created
 - ✅ Multi-mode prompt system designed
-- ✅ Basic frontend chat interface implemented
+- ✅ Frontend chat interface implemented
 - ✅ Frontend-backend connection established
+- ✅ Test mode system implemented (mock responses)
+- ✅ Mode selection functionality working
 
-Needs refinement:
-- UI styling and user experience
+Next planned feature:
 - Conversation history implementation
-- Error handling improvements
-- Additional ADHD-specific features
